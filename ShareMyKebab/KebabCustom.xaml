@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="ShareMyKebab.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="My Kebab" Style="{StaticResource PhoneTextNormalStyle}">
+            	<TextBlock.Foreground>
+            		<SolidColorBrush Color="{StaticResource PhoneInverseInactiveColor}"/>
+            	</TextBlock.Foreground>
+            </TextBlock>
+            <TextBlock x:Name="PageTitle" Text="Share Your Kebab!" Margin="1,0,8,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="56"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.356*" />
+                <RowDefinition Height="0.644*" />
+            </Grid.RowDefinitions>
+            <TextBox Height="133" HorizontalAlignment="Left" Margin="0,68,0,0" Name="textBox1" Text="Loading tiny url..." VerticalAlignment="Top" Width="456" TextChanged="textBox1_TextChanged" TextWrapping="Wrap" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="59,32,0,0" Name="textBlock1" Text="Append a message to your position" VerticalAlignment="Top" Width="342" TextAlignment="Center" />
+            <Image Margin="82,0,82,44" Name="image1" Stretch="Uniform" RenderTransformOrigin="0.497,-0.022" Height="309" VerticalAlignment="Bottom" Grid.Row="1" />
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/email.png" x:Name="email" Click="email_Click" Text="Send Email"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/fb.png" x:Name="fb" Click="fb_Click" Text="Facebook"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/twitter.png" x:Name="twitter" Click="twitter_Click" Text="Twitter"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
